@@ -1,0 +1,24 @@
+== 2026-11-19T15:15:58+01:00 ==
+---- wall-web: UID ----
+uid=1000840000(1000840000) gid=0(root) groups=0(root),1000840000
+---- wall-web: SCC ----
+restricted-v2
+---- wall-web: pod securityContext ----
+{"fsGroup":1000840000,"runAsNonRoot":true,"seLinuxOptions":{"level":"s0:c29,c14"},"seccompProfile":{"type":"RuntimeDefault"}}
+---- wall-web: container securityContext ----
+{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"runAsUser":1000840000}
+---- wall-web: Secret-referanslar ----
+DB_USER <- wall-db-credentials/username
+DB_PASSWORD <- wall-db-credentials/password
+---- wall-db: UID ----
+uid=1000840000(1000840000) gid=0(root) groups=0(root),1000840000
+---- wall-db: SCC ----
+restricted-v2
+---- wall-db: pod securityContext ----
+{"fsGroup":1000840000,"runAsNonRoot":true,"seLinuxOptions":{"level":"s0:c29,c14"},"seccompProfile":{"type":"RuntimeDefault"}}
+---- wall-db: container securityContext ----
+{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"runAsUser":1000840000}
+---- wall-db: Secret-referanslar ----
+POSTGRES_DB <- /
+POSTGRES_USER <- wall-db-credentials/username
+POSTGRES_PASSWORD <- wall-db-credentials/password
