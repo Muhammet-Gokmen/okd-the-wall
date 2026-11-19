@@ -1,11 +1,11 @@
-== 2026-11-19T15:20:57+01:00 BEFORE: old password ==
+== 2026-11-19T15:22:48+01:00 BEFORE: old password ==
 OK: connection accepted
 == monitor started ==
-== 2026-11-19T15:21:03+01:00 1. ALTER ROLE in the database ==
+== 2026-11-19T15:22:54+01:00 1. ALTER ROLE in the database ==
 ALTER ROLE
-== 2026-11-19T15:21:03+01:00 2. Update Secret ==
+== 2026-11-19T15:22:55+01:00 2. Update Secret ==
 secret/wall-db-credentials patched
-== 2026-11-19T15:21:04+01:00 3. Restart web ==
+== 2026-11-19T15:22:56+01:00 3. Restart web ==
 deployment.apps/wall-web restarted
 Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
 Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
@@ -14,19 +14,20 @@ Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending 
 Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
 Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
 deployment "wall-web" successfully rolled out
-== 2026-11-19T15:21:07+01:00 rotation finished ==
+== 2026-11-19T15:22:59+01:00 rotation finished ==
 == AFTER: old password ==
 DENIED: connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  password authentication failed for user "wallapp"
 == AFTER: new password ==
 OK: connection accepted
 == App write + read through the Route ==
-            <p>V5-test-152114</p>
+            <p>V5-test-152307</p>
 == Earlier messages still present ==
 V2-test-150040
 V3-test-150942
 V5-test-152114
+V5-test-152307
 == Monitor summary (HTTP status: count) ==
       5 200
       3 503
       1 000
-      1 200
+      2 200
