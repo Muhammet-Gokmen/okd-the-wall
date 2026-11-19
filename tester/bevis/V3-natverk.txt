@@ -1,0 +1,14 @@
+== 2026-11-19T15:08:47+01:00 POLİTİKA ÖNCESİ ==
+-- klient -> wall-web (80)
+{"pod":"wall-web-79c8bb7f57-bgmc8","status":"ok"}
+
+-- klient -> wall-db (5432)
+exit=0
+== 2026-11-19T15:09:37+01:00 POLİTİKA SONRASI ==
+-- klient -> wall-web (80)
+{"pod":"wall-web-79c8bb7f57-5jqnl","status":"ok"}
+
+-- klient -> wall-db (5432), 5 sn zaman aşımı
+exit=1
+-- web -> db: yeni mesaj yazılıp okunuyor
+            <p>V3-test-150942</p>
