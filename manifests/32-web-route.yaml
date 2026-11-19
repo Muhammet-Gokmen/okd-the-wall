@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: wall-web
+  labels:
+    app.kubernetes.io/part-of: the-wall
+    app.kubernetes.io/name: wall-web
+spec:
+  to:
+    kind: Service
+    name: wall-web
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

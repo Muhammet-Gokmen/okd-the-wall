@@ -1,0 +1,20 @@
+== UID ve güvenlik alanları ==
+uid=1000840000(1000840000) gid=0(root) groups=0(root),1000840000
+{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"runAsUser":1000840000}
+== PVC ==
+NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+wall-db-data   Bound    pvc-21f1143b-147f-48fb-add3-da15bec06523   1Gi        RWO            gp3-csi        <unset>                 52m
+== Veritabanı ==
+You are connected to database "walldb" as user "wallapp" via socket in "/var/run/postgresql" at port "5432".
+          List of relations
+ Schema |   Name   | Type  |  Owner  
+--------+----------+-------+---------
+ public | messages | table | wallapp
+(1 row)
+
+ id |   author   |      message       
+----+------------+--------------------
+  1 | Gokmen     | hi! Are you ready?
+  2 | Testperson | V2-test-150040
+(2 rows)
+

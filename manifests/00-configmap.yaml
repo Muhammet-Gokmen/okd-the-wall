@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wall-config
+  labels:
+    app.kubernetes.io/part-of: the-wall
+data:
+  DB_HOST: wall-db
+  DB_PORT: "5432"
+  DB_NAME: walldb
