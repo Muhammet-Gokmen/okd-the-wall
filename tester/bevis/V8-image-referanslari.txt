@@ -1,0 +1,7 @@
+== 2026-11-20T17:16:38+01:00 ==
+-- Kümede çalışan v2 (imageID):
+wall-web-6fddb88c5f-7mwkw  docker.io/muhammetgokmen/the-wall@sha256:038b7193836ac04fd798481f5c639e120f757b46bb1e526da8e4b85aa0d34a73
+wall-web-6fddb88c5f-hqqcn  docker.io/muhammetgokmen/the-wall@sha256:038b7193836ac04fd798481f5c639e120f757b46bb1e526da8e4b85aa0d34a73
+-- Yerelde :v1 ve :v2 etiketlerinin digest'i (son push):
+v1 sha256:aa4880aeb3c204762859d376f7faed85895221a3bba6f925c507c27b044cd7f4
+v2 sha256:204133aaea6eb2f747658a536efe9d0615c88859ebb97bb0de4cea52c7ff71b2

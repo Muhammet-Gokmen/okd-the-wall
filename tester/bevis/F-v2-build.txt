@@ -43,7 +43,7 @@ Downloading flask-3.1.3-py3-none-any.whl (103 kB)
 Downloading psycopg-3.3.9-py3-none-any.whl (219 kB)
 Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
 Downloading psycopg_binary-3.3.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.9 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 9.1 MB/s eta 0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 9.6 MB/s eta 0:00:00
 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
 Downloading click-8.5.1-py3-none-any.whl (126 kB)
 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
@@ -58,17 +58,17 @@ WARNING: Running pip as the 'root' user can result in broken permissions and con
 
 [notice] A new release of pip is available: 25.0.1 -> 26.3
 [notice] To update, run: pip install --upgrade pip
---> 7310934df8d0
+--> 93ee96f3c7c5
 STEP 8/12: COPY app.py start.sh ./
---> 687a90902d83
+--> c16e09d16c8a
 STEP 9/12: RUN chgrp -R 0 /app && chmod -R g=u /app
---> d2745db86bed
+--> 5879b20e9985
 STEP 10/12: USER 1001
---> 3a6a98f2e1fe
+--> c297e2ae18b4
 STEP 11/12: EXPOSE 8080
---> 77b66da35836
+--> a7fc638cbe0f
 STEP 12/12: CMD ["/app/start.sh"]
 COMMIT docker.io/muhammetgokmen/the-wall:v2
---> 1daad44ef25c
+--> e24a151eff8e
 Successfully tagged docker.io/muhammetgokmen/the-wall:v2
-1daad44ef25c625fcf5e11557e15ece0c9107d80bc4920e569b87235a9b22e51
+e24a151eff8e8079e134c304f1e1d4d1d0e2565f2537234c15581658e89fa001
