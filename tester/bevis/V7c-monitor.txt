@@ -1,0 +1,108 @@
+== 15:51:31
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     31m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooFewReplicas) 
+wall-testclient             0m    2Mi    
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+== 15:51:41
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     31m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooFewReplicas) 
+wall-testclient             0m    2Mi    
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+== 15:51:50
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     31m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooFewReplicas) 
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-czrkp   338m   69Mi   
+wall-web-66f7488444-fbl4z   213m   69Mi   
+== 15:51:59
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     31m
+AbleToScale=True(SucceededRescale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-czrkp   338m   69Mi   
+wall-web-66f7488444-fbl4z   213m   69Mi   
+== 15:52:08
+wall-web   Deployment/wall-web   cpu: 275%/50%   2     3     2     31m
+AbleToScale=True(SucceededRescale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    638m   38Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-czrkp   486m   70Mi   
+wall-web-66f7488444-fbl4z   466m   69Mi   
+== 15:52:19
+wall-web   Deployment/wall-web   cpu: 476%/50%   2     3     3     31m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    681m   40Mi   
+wall-loadgen-gmj6f          51m    24Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   309m   71Mi   
+wall-web-66f7488444-czrkp   499m   70Mi   
+wall-web-66f7488444-fbl4z   436m   69Mi   
+== 15:52:29
+wall-web   Deployment/wall-web   cpu: 476%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    681m   40Mi   
+wall-loadgen-gmj6f          51m    24Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   309m   71Mi   
+wall-web-66f7488444-czrkp   499m   70Mi   
+wall-web-66f7488444-fbl4z   436m   69Mi   
+== 15:52:39
+wall-web   Deployment/wall-web   cpu: 467%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    796m   40Mi   
+wall-loadgen-gmj6f          61m    24Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   331m   71Mi   
+wall-web-66f7488444-czrkp   499m   70Mi   
+wall-web-66f7488444-fbl4z   356m   70Mi   
+== 15:52:50
+wall-web   Deployment/wall-web   cpu: 395%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    831m   40Mi   
+wall-loadgen-gmj6f          64m    25Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   357m   72Mi   
+wall-web-66f7488444-czrkp   485m   69Mi   
+wall-web-66f7488444-fbl4z   356m   70Mi   
+== 15:52:58
+wall-web   Deployment/wall-web   cpu: 395%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    831m   40Mi   
+wall-loadgen-gmj6f          64m    25Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   357m   72Mi   
+wall-web-66f7488444-czrkp   485m   69Mi   
+wall-web-66f7488444-fbl4z   356m   70Mi   
+== 15:53:07
+wall-web   Deployment/wall-web   cpu: 405%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    769m   38Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   297m   75Mi   
+wall-web-66f7488444-czrkp   485m   69Mi   
+wall-web-66f7488444-fbl4z   357m   69Mi   
+== 15:53:16
+wall-web   Deployment/wall-web   cpu: 367%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    769m   38Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   297m   75Mi   
+wall-web-66f7488444-czrkp   479m   69Mi   
+wall-web-66f7488444-fbl4z   326m   69Mi   
+== 15:53:27
+wall-web   Deployment/wall-web   cpu: 367%/50%   2     3     3     32m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    448m   35Mi   
+wall-testclient             0m     2Mi    
+wall-web-66f7488444-c2hwx   198m   75Mi   
+wall-web-66f7488444-czrkp   479m   69Mi   
+wall-web-66f7488444-fbl4z   82m    69Mi   
+== 15:53:35
+wall-web   Deployment/wall-web   cpu: 253%/50%   2     3     3     33m
+AbleToScale=True(ReadyForNewScale) ScalingActive=True(ValidMetricFound) ScalingLimited=True(TooManyReplicas) 
+wall-db-775f8b4fc6-8cwnb    7m    35Mi   
+wall-testclient             0m    2Mi    
+wall-web-66f7488444-c2hwx   2m    75Mi   
+wall-web-66f7488444-czrkp   2m    69Mi   
+wall-web-66f7488444-fbl4z   82m   69Mi   

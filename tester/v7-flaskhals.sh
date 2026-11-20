@@ -14,7 +14,7 @@ sed 's/2:45,4:60,8:120/8:90/' tester/wall-loadgen-job.yaml | oc apply -f -
     oc get hpa wall-web -o jsonpath='{range .status.conditions[*]}{.type}={.status}({.reason}) {end}{"\n"}'
     oc adm top pods --no-headers
     sleep 8
-  done ) > tester/bevis/V7b-monitor.txt 2>&1 &
+  done ) > tester/bevis/V7${TAG:-b}-monitor.txt 2>&1 &
 MON=$!
 sleep 70
 echo "== $(date -Is) DURING (t+70s) =="
