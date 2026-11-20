@@ -1,0 +1,15 @@
+== 2026-11-20T16:41:26+01:00 ==
+---- wall-web ----
+wall-web-66f7488444-czrkp
+  image:   docker.io/muhammetgokmen/the-wall:v1
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:c2b7cb0f1b408d3b50025d42f5da6f0bd398895b4d5f2bcf41dd8c756dde33b0
+wall-web-66f7488444-fbl4z
+  image:   docker.io/muhammetgokmen/the-wall:v1
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:c2b7cb0f1b408d3b50025d42f5da6f0bd398895b4d5f2bcf41dd8c756dde33b0
+---- wall-db ----
+wall-db-775f8b4fc6-8cwnb
+  image:   quay.io/kurs/postgresql:2026-10-29
+  imageID: quay.io/kurs/postgresql@sha256:5e1750934d4de30c9718f358e4913e98fa2024c3a86de88e972ba5d5b640d82f
+---- yerel image ----
+Id: 677e8d91383612b40d8bbe134099a0ad7bc11b0dd866ef4adbff830d3a017562
+Digest: sha256:aa4880aeb3c204762859d376f7faed85895221a3bba6f925c507c27b044cd7f4
