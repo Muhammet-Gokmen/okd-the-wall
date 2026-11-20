@@ -1,0 +1,35 @@
+Name:                                                  wall-web
+Namespace:                                             student-muhammet-gokmen-lerniastudent-se
+Labels:                                                app.kubernetes.io/name=wall-web
+                                                       app.kubernetes.io/part-of=the-wall
+Annotations:                                           <none>
+CreationTimestamp:                                     Fri, 20 Nov 2026 15:20:30 +0100
+Reference:                                             Deployment/wall-web
+Metrics:                                               ( current / target )
+  resource cpu on pods  (as a percentage of request):  2% (2m) / 50%
+Min replicas:                                          2
+Max replicas:                                          3
+Behavior:
+  Scale Up:
+    Stabilization Window: 0 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Pods     Value: 4    Period: 15 seconds
+      - Type: Percent  Value: 100  Period: 15 seconds
+  Scale Down:
+    Stabilization Window: 60 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Percent  Value: 100  Period: 15 seconds
+Deployment pods:       2 current / 2 desired
+Conditions:
+  Type            Status  Reason            Message
+  ----            ------  ------            -------
+  AbleToScale     True    ReadyForNewScale  recommended size matches current size
+  ScalingActive   True    ValidMetricFound  the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
+  ScalingLimited  True    TooFewReplicas    the desired replica count is less than the minimum replica count
+Events:
+  Type    Reason             Age    From                       Message
+  ----    ------             ----   ----                       -------
+  Normal  SuccessfulRescale  6m21s  horizontal-pod-autoscaler  New size: 3; reason: cpu resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  111s   horizontal-pod-autoscaler  New size: 2; reason: All metrics below target

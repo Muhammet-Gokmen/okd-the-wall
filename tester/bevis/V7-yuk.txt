@@ -1,0 +1,3 @@
+14:24:27 clients=2 secs=45 requests=4180 errors=0 rps=92.9 avg_latency_ms=22
+14:25:27 clients=4 secs=60 requests=5534 errors=0 rps=92.2 avg_latency_ms=43
+14:27:27 clients=8 secs=120 requests=10439 errors=0 rps=86.9 avg_latency_ms=92

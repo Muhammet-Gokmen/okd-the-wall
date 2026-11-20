@@ -1,0 +1,350 @@
+== 15:23:41
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     3m11s
+wall-web-66f7488444-czrkp   2m    64Mi   
+wall-web-66f7488444-dbn9s   2m    64Mi   
+wall-web   2/2   2     2     24h
+== 15:23:52
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     3m22s
+wall-web-66f7488444-czrkp   61m   65Mi   
+wall-web-66f7488444-dbn9s   8m    65Mi   
+wall-web   2/2   2     2     24h
+== 15:24:03
+wall-web   Deployment/wall-web   cpu: 34%/50%   2     3     2     3m34s
+wall-web-66f7488444-czrkp   392m   65Mi   
+wall-web-66f7488444-dbn9s   398m   66Mi   
+wall-web   2/2   2     2     24h
+== 15:24:15
+wall-web   Deployment/wall-web   cpu: 395%/50%   2     3     2     3m45s
+wall-web-66f7488444-czrkp   392m   65Mi   
+wall-web-66f7488444-dbn9s   398m   66Mi   
+wall-web   2/3   3     2     24h
+== 15:24:25
+wall-web   Deployment/wall-web   cpu: 395%/50%   2     3     2     3m56s
+wall-web-66f7488444-czrkp   366m   66Mi   
+wall-web-66f7488444-dbn9s   378m   67Mi   
+wall-web   3/3   3     3     24h
+== 15:24:36
+wall-web   Deployment/wall-web   cpu: 372%/50%   2     3     3     4m8s
+wall-web-66f7488444-czrkp   366m   66Mi   
+wall-web-66f7488444-dbn9s   335m   69Mi   
+wall-web   3/3   3     3     24h
+== 15:24:49
+wall-web   Deployment/wall-web   cpu: 350%/50%   2     3     3     4m19s
+wall-web-66f7488444-czrkp   295m   69Mi   
+wall-web-66f7488444-dbn9s   323m   69Mi   
+wall-web   3/3   3     3     24h
+== 15:24:59
+wall-web   Deployment/wall-web   cpu: 309%/50%   2     3     3     4m31s
+wall-web-66f7488444-czrkp   295m   69Mi   
+wall-web-66f7488444-dbn9s   323m   69Mi   
+wall-web   3/3   3     3     24h
+== 15:25:11
+wall-web   Deployment/wall-web   cpu: 309%/50%   2     3     3     4m42s
+wall-web-66f7488444-czrkp   268m   69Mi   
+wall-web-66f7488444-dbn9s   329m   69Mi   
+wall-web-66f7488444-fbl4z   239m   72Mi   
+wall-web   3/3   3     3     24h
+== 15:25:23
+wall-web   Deployment/wall-web   cpu: 278%/50%   2     3     3     4m53s
+wall-web-66f7488444-czrkp   239m   68Mi   
+wall-web-66f7488444-dbn9s   298m   69Mi   
+wall-web-66f7488444-fbl4z   243m   72Mi   
+wall-web   3/3   3     3     24h
+== 15:25:34
+wall-web   Deployment/wall-web   cpu: 260%/50%   2     3     3     5m5s
+wall-web-66f7488444-czrkp   251m   69Mi   
+wall-web-66f7488444-dbn9s   312m   69Mi   
+wall-web-66f7488444-fbl4z   227m   74Mi   
+wall-web   3/3   3     3     24h
+== 15:25:44
+wall-web   Deployment/wall-web   cpu: 263%/50%   2     3     3     5m16s
+wall-web-66f7488444-czrkp   251m   69Mi   
+wall-web-66f7488444-dbn9s   312m   69Mi   
+wall-web-66f7488444-fbl4z   227m   74Mi   
+wall-web   3/3   3     3     24h
+== 15:25:55
+wall-web   Deployment/wall-web   cpu: 263%/50%   2     3     3     5m27s
+wall-web-66f7488444-czrkp   261m   69Mi   
+wall-web-66f7488444-dbn9s   295m   69Mi   
+wall-web-66f7488444-fbl4z   231m   75Mi   
+wall-web   3/3   3     3     24h
+== 15:26:06
+wall-web   Deployment/wall-web   cpu: 262%/50%   2     3     3     5m38s
+wall-web-66f7488444-czrkp   268m   69Mi   
+wall-web-66f7488444-dbn9s   285m   69Mi   
+wall-web-66f7488444-fbl4z   234m   75Mi   
+wall-web   3/3   3     3     24h
+== 15:26:18
+wall-web   Deployment/wall-web   cpu: 262%/50%   2     3     3     5m48s
+wall-web-66f7488444-czrkp   268m   69Mi   
+wall-web-66f7488444-dbn9s   285m   69Mi   
+wall-web-66f7488444-fbl4z   234m   75Mi   
+wall-web   3/3   3     3     24h
+== 15:26:29
+wall-web   Deployment/wall-web   cpu: 262%/50%   2     3     3     5m59s
+wall-web-66f7488444-czrkp   246m   69Mi   
+wall-web-66f7488444-dbn9s   310m   69Mi   
+wall-web-66f7488444-fbl4z   220m   75Mi   
+wall-web   3/3   3     3     24h
+== 15:26:40
+wall-web   Deployment/wall-web   cpu: 258%/50%   2     3     3     6m11s
+wall-web-66f7488444-czrkp   246m   69Mi   
+wall-web-66f7488444-dbn9s   289m   69Mi   
+wall-web-66f7488444-fbl4z   231m   75Mi   
+wall-web   3/3   3     3     24h
+== 15:26:51
+wall-web   Deployment/wall-web   cpu: 255%/50%   2     3     3     6m22s
+wall-web-66f7488444-czrkp   251m   69Mi   
+wall-web-66f7488444-dbn9s   284m   69Mi   
+wall-web-66f7488444-fbl4z   227m   75Mi   
+wall-web   3/3   3     3     24h
+== 15:27:02
+wall-web   Deployment/wall-web   cpu: 254%/50%   2     3     3     6m33s
+wall-web-66f7488444-czrkp   259m   69Mi   
+wall-web-66f7488444-dbn9s   302m   69Mi   
+wall-web-66f7488444-fbl4z   251m   68Mi   
+wall-web   3/3   3     3     24h
+== 15:27:12
+wall-web   Deployment/wall-web   cpu: 254%/50%   2     3     3     6m44s
+wall-web-66f7488444-czrkp   259m   69Mi   
+wall-web-66f7488444-dbn9s   302m   69Mi   
+wall-web-66f7488444-fbl4z   251m   68Mi   
+wall-web   3/3   3     3     24h
+== 15:27:24
+wall-web   Deployment/wall-web   cpu: 270%/50%   2     3     3     6m54s
+wall-web-66f7488444-czrkp   239m   69Mi   
+wall-web-66f7488444-dbn9s   290m   69Mi   
+wall-web-66f7488444-fbl4z   230m   69Mi   
+wall-web   3/3   3     3     24h
+== 15:27:35
+wall-web   Deployment/wall-web   cpu: 253%/50%   2     3     3     7m6s
+wall-web-66f7488444-czrkp   243m   69Mi   
+wall-web-66f7488444-dbn9s   247m   68Mi   
+wall-web-66f7488444-fbl4z   238m   69Mi   
+wall-web   3/3   3     3     24h
+== 15:27:46
+wall-web   Deployment/wall-web   cpu: 242%/50%   2     3     3     7m18s
+wall-web-66f7488444-czrkp   243m   69Mi   
+wall-web-66f7488444-dbn9s   247m   68Mi   
+wall-web-66f7488444-fbl4z   238m   69Mi   
+wall-web   3/3   3     3     24h
+== 15:27:59
+wall-web   Deployment/wall-web   cpu: 242%/50%   2     3     3     7m29s
+wall-web-66f7488444-czrkp   12m   68Mi   
+wall-web-66f7488444-dbn9s   3m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   3/3   3     3     24h
+== 15:28:09
+wall-web   Deployment/wall-web   cpu: 6%/50%   2     3     3     7m41s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-dbn9s   3m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   3/3   3     3     24h
+== 15:28:20
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     3     7m52s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-dbn9s   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   3/3   3     3     24h
+== 15:28:32
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     3     8m3s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-dbn9s   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   3/3   3     3     24h
+== 15:28:43
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     3     8m14s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-dbn9s   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   3/3   3     3     24h
+== 15:28:54
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     3     8m25s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:29:06
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     8m36s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:29:16
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     8m48s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:29:27
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     8m59s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:29:38
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     9m10s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:29:50
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     9m20s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:30:01
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     9m32s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:30:12
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     9m43s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:30:24
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     9m54s
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:30:34
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     10m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:30:45
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     10m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:30:57
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     10m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:31:08
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     10m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:31:18
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     10m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:31:30
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     11m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:31:42
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     11m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:31:52
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     11m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:32:04
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     11m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:32:15
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     11m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:32:26
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     11m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:32:38
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     12m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:32:48
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     12m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:32:59
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     12m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:33:12
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     12m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:33:23
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     12m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:33:33
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     13m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:33:45
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     13m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:33:56
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     13m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:34:07
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     13m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:34:19
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     13m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:34:29
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     14m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:34:41
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     14m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:34:53
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     14m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:35:04
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     14m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:35:14
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     14m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:35:27
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     14m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:35:37
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     15m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   2m    68Mi   
+wall-web   2/2   2     2     24h
+== 15:35:48
+wall-web   Deployment/wall-web   cpu: 2%/50%   2     3     2     15m
+wall-web-66f7488444-czrkp   2m    68Mi   
+wall-web-66f7488444-fbl4z   3m    68Mi   
+wall-web   2/2   2     2     24h
