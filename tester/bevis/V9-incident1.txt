@@ -1,0 +1,54 @@
+== 2026-11-20T17:26:05+01:00 BASELINE ==
+-- web pods (ready / restartCount):
+wall-web-6fddb88c5f-7mwkw   true   0
+wall-web-6fddb88c5f-hqqcn   true   0
+-- endpoints:
+wall-db    10.128.1.226:5432                 27h
+wall-web   10.131.0.8:8080,10.131.0.9:8080   26h
+-- route: HTTP 200
+== 2026-11-20T17:26:06+01:00 FAULT: wrong selector on Service wall-db ==
+service/wall-db patched
+== 2026-11-20T17:26:38+01:00 t+30s ==
+-- web pods (ready / restartCount):
+wall-web-6fddb88c5f-7mwkw   false   0
+wall-web-6fddb88c5f-hqqcn   false   0
+-- endpoints:
+wall-db    <none>   27h
+wall-web            26h
+-- route: HTTP 503
+-- direct port-forward to running web pod wall-web-6fddb88c5f-7mwkw (bypasses Service/Route)
+GET /health: {"pod":"wall-web-6fddb88c5f-7mwkw","status":"ok"}
+ -> HTTP 200
+GET /:       Database unavailable. Check application logs. -> HTTP 503
+-- web log (last lines):
+psycopg.OperationalError: connection failed: connection to server at "172.30.5.132", port 5432 failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+127.0.0.1 - - [20/Nov/2026:16:26:44 +0000] "GET / HTTP/1.1" 503 45 "-" "curl/8.5.0"
+-- diagnosis: is the DB pod healthy, and what does the Service select?
+NAME                       READY   STATUS    RESTARTS   AGE   LABELS
+wall-db-775f8b4fc6-8cwnb   1/1     Running   0          95m   app.kubernetes.io/name=wall-db,app.kubernetes.io/part-of=the-wall,pod-template-hash=775f8b4fc6,topology.kubernetes.io/region=eu-north-1,topology.kubernetes.io/zone=eu-north-1a
+Selector:                 app.kubernetes.io/name=wall-db-wrong
+Endpoints:                
+NAME                POD-SELECTOR                     AGE
+wall-db-allow-web   app.kubernetes.io/name=wall-db   26h
+== 2026-11-20T17:27:32+01:00 t+90s (restartCount must still be unchanged) ==
+-- web pods (ready / restartCount):
+wall-web-6fddb88c5f-7mwkw   false   0
+wall-web-6fddb88c5f-hqqcn   false   0
+-- endpoints:
+wall-db    <none>   27h
+wall-web            26h
+-- route: HTTP 503
+== 2026-11-20T17:27:32+01:00 FIX: re-apply the Service manifest from Git ==
+service/wall-db configured
+== 2026-11-20T17:27:53+01:00 AFTER FIX ==
+-- web pods (ready / restartCount):
+wall-web-6fddb88c5f-7mwkw   true   0
+wall-web-6fddb88c5f-hqqcn   true   0
+-- endpoints:
+wall-db    10.128.1.226:5432                 27h
+wall-web   10.131.0.8:8080,10.131.0.9:8080   26h
+-- route: HTTP 200
+G1-test-172753
+Messages: 13
