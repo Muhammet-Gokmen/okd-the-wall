@@ -1,0 +1,72 @@
+== 2026-11-20T17:17:22+01:00 1. Working revision (v2) ==
+revision=7
+image=docker.io/muhammetgokmen/the-wall:v2
+deployment.apps/wall-web with revision #7
+Pod Template:
+  Labels:	app.kubernetes.io/name=wall-web
+	app.kubernetes.io/part-of=the-wall
+	pod-template-hash=6fddb88c5f
+  Annotations:	kubectl.kubernetes.io/restartedAt: 2026-11-19T15:22:56+01:00
+  Containers:
+   web:
+    Image:	docker.io/muhammetgokmen/the-wall:v2
+    Port:	8080/TCP (http)
+    Host Port:	0/TCP (http)
+    Limits:
+== 2026-11-20T17:17:23+01:00 2. Deploy an intentionally invalid image ==
+deployment.apps/wall-web image updated
+-- rollout status (expected to stall)
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+error: timed out waiting for the condition
+-- deployment / replicasets / pods
+NAME       READY   UP-TO-DATE   AVAILABLE   AGE
+wall-web   2/2     1            2           26h
+NAME                  DESIRED   CURRENT   READY   AGE
+wall-web-5ffd489dd9   0         0         0       25h
+wall-web-66f7488444   0         0         0       139m
+wall-web-6f6986f4c6   0         0         0       26h
+wall-web-6fddb88c5f   2         2         2       35m
+wall-web-79c8bb7f57   0         0         0       26h
+wall-web-8594ffd498   1         1         0       97s
+wall-web-85d9b68c45   0         0         0       26h
+wall-web-c7d757d8f    0         0         0       25h
+NAME                        READY   STATUS             RESTARTS   AGE
+wall-web-6fddb88c5f-7mwkw   1/1     Running            0          35m
+wall-web-6fddb88c5f-hqqcn   1/1     Running            0          35m
+wall-web-8594ffd498-ftgdl   0/1     ImagePullBackOff   0          97s
+-- why: events of the stuck pod
+Events:
+  Type     Reason          Age                From               Message
+  ----     ------          ----               ----               -------
+  Normal   Scheduled       96s                default-scheduler  Successfully assigned student-muhammet-gokmen-lerniastudent-se/wall-web-8594ffd498-ftgdl to ip-10-0-13-80.eu-north-1.compute.internal
+  Normal   AddedInterface  95s                multus             Add eth0 [10.131.0.10/23] from ovn-kubernetes
+  Normal   BackOff         15s (x5 over 93s)  kubelet            spec.containers{web}: Back-off pulling image "docker.io/muhammetgokmen/the-wall:v999-does-not-exist"
+  Warning  Failed          15s (x5 over 93s)  kubelet            spec.containers{web}: Error: ImagePullBackOff
+  Normal   Pulling         2s (x4 over 95s)   kubelet            spec.containers{web}: Pulling image "docker.io/muhammetgokmen/the-wall:v999-does-not-exist"
+  Warning  Failed          1s (x4 over 94s)   kubelet            spec.containers{web}: Failed to pull image "docker.io/muhammetgokmen/the-wall:v999-does-not-exist": unable to pull image or OCI artifact: pull image err: initializing source docker://muhammetgokmen/the-wall:v999-does-not-exist: reading manifest v999-does-not-exist in docker.io/muhammetgokmen/the-wall: manifest unknown; artifact err: image reference: get manifest from ref: create image source: reading manifest v999-does-not-exist in docker.io/muhammetgokmen/the-wall: manifest unknown
+  Warning  Failed          1s (x4 over 94s)   kubelet            spec.containers{web}: Error: ErrImagePull
+-- site still served by the old pods?
+HTTP 200
+THE WALL_ v2
+-- deployment conditions
+Available=True (MinimumReplicasAvailable)
+Progressing=True (ReplicaSetUpdated)
+== 2026-11-20T17:19:02+01:00 3. Roll back ==
+deployment.apps/wall-web rolled back
+deployment "wall-web" successfully rolled out
+revision now: 9
+image=docker.io/muhammetgokmen/the-wall:v2
+wall-web-6fddb88c5f-7mwkw  docker.io/muhammetgokmen/the-wall:v2
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:038b7193836ac04fd798481f5c639e120f757b46bb1e526da8e4b85aa0d34a73
+wall-web-6fddb88c5f-hqqcn  docker.io/muhammetgokmen/the-wall:v2
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:038b7193836ac04fd798481f5c639e120f757b46bb1e526da8e4b85aa0d34a73
+== 4. Verify: function, write, previous data ==
+THE WALL_ v2
+Messages: 11
+F-test-171903
+Messages: 12
+V6-145415-1
+V6-145415-2
+V6-145415-3
+-- live Deployment vs manifest in Git (empty diff = identical)
+oc diff exit code: 0
