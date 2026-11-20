@@ -1,0 +1,29 @@
+== 2026-11-20T16:43:12+01:00 ==
+önce: Messages: 11
+deployment.apps/wall-web configured
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
+deployment "wall-web" successfully rolled out
+sonra:
+THE WALL_ v2
+Messages: 11
+wall-web-66f7488444-fbl4z  docker.io/muhammetgokmen/the-wall:v1
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:c2b7cb0f1b408d3b50025d42f5da6f0bd398895b4d5f2bcf41dd8c756dde33b0
+wall-web-6fddb88c5f-7mwkw  docker.io/muhammetgokmen/the-wall:v2
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:038b7193836ac04fd798481f5c639e120f757b46bb1e526da8e4b85aa0d34a73
+wall-web-6fddb88c5f-hqqcn  docker.io/muhammetgokmen/the-wall:v2
+  imageID: docker.io/muhammetgokmen/the-wall@sha256:038b7193836ac04fd798481f5c639e120f757b46bb1e526da8e4b85aa0d34a73
+deployment.apps/wall-web 
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+3         <none>
+4         <none>
+5         <none>
+6         <none>
+7         <none>
+
