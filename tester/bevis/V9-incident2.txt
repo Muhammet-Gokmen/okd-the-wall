@@ -1,0 +1,89 @@
+== 2026-11-20T17:31:15+01:00 BASELINE ==
+NAME                        READY   STATUS    RESTARTS   AGE
+wall-web-6fddb88c5f-7mwkw   1/1     Running   0          47m
+wall-web-6fddb88c5f-hqqcn   1/1     Running   0          48m
+-- route: HTTP 200
+wall-db   10.128.1.226:5432   27h
+== 2026-11-20T17:31:16+01:00 FAULT: DB_NAME=walldb_missing in ConfigMap + restart ==
+configmap/wall-config patched
+deployment.apps/wall-web restarted
+== 2026-11-20T17:31:38+01:00 t+20s ==
+NAME                        READY   STATUS    RESTARTS   AGE
+wall-web-6fddb88c5f-7mwkw   1/1     Running   0          48m
+wall-web-6fddb88c5f-hqqcn   1/1     Running   0          48m
+wall-web-754bf6d5d5-ww6vp   0/1     Running   0          21s
+-- route: HTTP 200
+== 2026-11-20T17:32:43+01:00 t+80s ==
+NAME                        READY   STATUS    RESTARTS      AGE
+wall-web-6fddb88c5f-7mwkw   1/1     Running   0             49m
+wall-web-6fddb88c5f-hqqcn   1/1     Running   0             49m
+wall-web-754bf6d5d5-ww6vp   0/1     Running   1 (23s ago)   85s
+-- route: HTTP 200
+== 2026-11-20T17:33:47+01:00 t+140s ==
+NAME                        READY   STATUS    RESTARTS      AGE
+wall-web-6fddb88c5f-7mwkw   1/1     Running   0             50m
+wall-web-6fddb88c5f-hqqcn   1/1     Running   0             50m
+wall-web-754bf6d5d5-ww6vp   0/1     Running   2 (27s ago)   2m30s
+-- route: HTTP 200
+-- logs of the new pod pod/wall-web-754bf6d5d5-ww6vp (current container):
+Waiting for database (1/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (2/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (3/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (4/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (5/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (6/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (7/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Waiting for database (8/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+-- logs of the previous container (after a restart):
+Waiting for database (30/30): connection failed: connection to server at "172.30.5.132", port 5432 failed: FATAL:  database "walldb_missing" does not exist
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/app/app.py", line 193, in initialize
+    raise RuntimeError("Database could not be initialized")
+RuntimeError: Database could not be initialized
+-- events / state of the new pod:
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Fri, 20 Nov 2026 17:32:20 +0100
+      Finished:     Fri, 20 Nov 2026 17:33:21 +0100
+    Ready:          False
+Events:
+  Type     Reason          Age                   From               Message
+  ----     ------          ----                  ----               -------
+  Normal   Scheduled       2m30s                 default-scheduler  Successfully assigned student-muhammet-gokmen-lerniastudent-se/wall-web-754bf6d5d5-ww6vp to ip-10-0-13-80.eu-north-1.compute.internal
+  Normal   AddedInterface  2m30s                 multus             Add eth0 [10.131.0.11/23] from ovn-kubernetes
+  Warning  Unhealthy       31s (x24 over 2m26s)  kubelet            spec.containers{web}: Startup probe failed: Get "http://10.131.0.11:8080/health": dial tcp 10.131.0.11:8080: connect: connection refused
+  Warning  BackOff         28s                   kubelet            spec.containers{web}: Back-off restarting failed container web in pod wall-web-754bf6d5d5-ww6vp_student-muhammet-gokmen-lerniastudent-se(ff026537-c6c5-4d34-ab3c-825b24bb325d)
+  Normal   Pulled          17s (x3 over 2m30s)   kubelet            spec.containers{web}: Container image "docker.io/muhammetgokmen/the-wall:v2" already present on machine and can be accessed by the pod
+  Normal   Created         17s (x3 over 2m30s)   kubelet            spec.containers{web}: Container created
+  Normal   Started         17s (x3 over 2m30s)   kubelet            spec.containers{web}: Container started
+-- is the DB side healthy? (Service endpoints + pod)
+wall-db   10.128.1.226:5432   27h
+NAME                       READY   STATUS    RESTARTS   AGE
+wall-db-775f8b4fc6-8cwnb   1/1     Running   0          102m
+-- which databases exist?
+postgres
+walldb
+-- configuration the web pods are given:
+{"DB_HOST":"wall-db","DB_NAME":"walldb_missing","DB_PORT":"5432"}
+== 2026-11-20T17:33:50+01:00 FIX: restore ConfigMap from Git + restart ==
+configmap/wall-config configured
+deployment.apps/wall-web restarted
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "wall-web" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wall-web" rollout to finish: 1 old replicas are pending termination...
+deployment "wall-web" successfully rolled out
+== 2026-11-20T17:34:01+01:00 AFTER FIX ==
+NAME                        READY   STATUS        RESTARTS      AGE
+wall-web-6fddb88c5f-hqqcn   1/1     Terminating   0             50m
+wall-web-754bf6d5d5-ww6vp   0/1     Terminating   2 (42s ago)   2m45s
+wall-web-789d759669-2tgzl   1/1     Running       0             13s
+wall-web-789d759669-dsp28   1/1     Running       0             6s
+-- route: HTTP 000
+G2-test-173406
+Messages: 14
+{"DB_HOST":"wall-db","DB_NAME":"walldb","DB_PORT":"5432"}
