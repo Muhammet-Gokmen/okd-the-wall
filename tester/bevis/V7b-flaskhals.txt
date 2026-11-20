@@ -1,0 +1,36 @@
+== 2026-11-20T15:36:26+01:00 BEFORE ==
+[db] pod/wall-db-7f78bb5449-qmhh7
+nr_periods 3432
+nr_throttled 2030
+throttled_usec 95275953
+[web] pod/wall-web-66f7488444-czrkp
+nr_periods 2718
+nr_throttled 138
+throttled_usec 4440356
+job.batch "wall-loadgen" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+job.batch/wall-loadgen created
+== 2026-11-20T15:37:41+01:00 DURING (t+70s) ==
+[loadgen] pod/wall-loadgen-h9bvb
+nr_periods 727
+nr_throttled 7
+throttled_usec 1042368
+[db] pod/wall-db-7f78bb5449-qmhh7
+nr_periods 4160
+nr_throttled 2741
+throttled_usec 133327026
+[web] pod/wall-web-66f7488444-czrkp
+nr_periods 3448
+nr_throttled 194
+throttled_usec 6857243
+job.batch/wall-loadgen condition met
+== 2026-11-20T15:38:35+01:00 AFTER ==
+[db] pod/wall-db-7f78bb5449-qmhh7
+nr_periods 4389
+nr_throttled 2914
+throttled_usec 146453314
+[web] pod/wall-web-66f7488444-czrkp
+nr_periods 3636
+nr_throttled 196
+throttled_usec 6888815
+== load generator result ==
+14:38:00 clients=8 secs=90 requests=7934 errors=0 rps=88.0 avg_latency_ms=91

@@ -11,6 +11,7 @@ spec:
   ttlSecondsAfterFinished: 1800
   template:
     metadata:
+
       labels:
         app.kubernetes.io/part-of: the-wall
         app.kubernetes.io/name: wall-loadgen
@@ -24,6 +25,9 @@ spec:
         - name: loadgen
           image: docker.io/muhammetgokmen/the-wall:v1
           command: ["python", "/scripts/loadgen.py"]
+          env:
+            - name: STAGES
+              value: "2:45,4:60,8:120"
           resources:
             requests:
               cpu: 50m
@@ -40,6 +44,7 @@ spec:
               mountPath: /scripts
               readOnly: true
       volumes:
+
         - name: script
           configMap:
             name: wall-loadgen

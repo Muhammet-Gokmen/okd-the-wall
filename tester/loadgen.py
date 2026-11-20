@@ -1,10 +1,13 @@
 # Bounded load generator: repeated GET / through the wall-web Service.
-# Max 8 concurrent clients, 5 s request timeout, ramped 2 -> 4 -> 8 clients.
-import threading, time, urllib.request
+# Max 8 concurrent clients, 5 s request timeout, total <= 240 s.
+# STAGES env: "clients:seconds,clients:seconds,..." (default ramps 2 -> 4 -> 8).
+import os, threading, time, urllib.request
 
 URL = "http://wall-web/"
-STAGES = [(2, 45), (4, 60), (8, 120)]   # (clients, seconds) -> 225 s total
 TIMEOUT = 5
+STAGES = [(min(int(c), 8), int(s)) for c, s in
+          (x.split(":") for x in os.environ.get("STAGES", "2:45,4:60,8:120").split(","))]
+assert sum(s for _, s in STAGES) <= 240, "load run must stay under 240 s"
 lock = threading.Lock()
 
 def worker(stop, stats):
@@ -24,6 +27,7 @@ def worker(stop, stats):
 
 for clients, secs in STAGES:
     stop = threading.Event()
+
     stats = {"n": 0, "err": 0, "lat": 0.0}
     ths = [threading.Thread(target=worker, args=(stop, stats), daemon=True)
            for _ in range(clients)]
