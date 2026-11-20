@@ -1,0 +1,5 @@
+NAME                        CPU(cores)   MEMORY(bytes)   
+wall-db-7f78bb5449-qmhh7    3m           38Mi            
+wall-testclient             0m           2Mi             
+wall-web-5ffd489dd9-hkxlf   1m           64Mi            
+wall-web-5ffd489dd9-kp7xl   1m           69Mi            

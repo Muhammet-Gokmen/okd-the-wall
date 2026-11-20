@@ -1,0 +1,29 @@
+== 2026-11-20T15:17:18+01:00 ==
+NAME                        READY   STATUS    RESTARTS   AGE
+wall-db-7f78bb5449-qmhh7    1/1     Running   0          4m23s
+wall-testclient             1/1     Running   0          23m
+wall-web-66f7488444-czrkp   1/1     Running   0          42s
+wall-web-66f7488444-dbn9s   1/1     Running   0          49s
+---- wall-web: probe ayarları ----
+startup:   {"failureThreshold":40,"httpGet":{"path":"/health","port":"http","scheme":"HTTP"},"periodSeconds":5,"successThreshold":1,"timeoutSeconds":2}
+liveness:  {"failureThreshold":3,"httpGet":{"path":"/health","port":"http","scheme":"HTTP"},"periodSeconds":10,"successThreshold":1,"timeoutSeconds":2}
+readiness: {"failureThreshold":2,"httpGet":{"path":"/","port":"http","scheme":"HTTP"},"periodSeconds":5,"successThreshold":1,"timeoutSeconds":5}
+---- wall-db: probe ayarları ----
+startup:   {"exec":{"command":["pg_isready","-h","127.0.0.1","-p","5432"]},"failureThreshold":30,"periodSeconds":5,"successThreshold":1,"timeoutSeconds":3}
+liveness:  {"exec":{"command":["pg_isready","-h","127.0.0.1","-p","5432"]},"failureThreshold":3,"periodSeconds":20,"successThreshold":1,"timeoutSeconds":5}
+readiness: {"exec":{"command":["sh","-c","psql -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\" -tAc 'SELECT 1' | grep -q 1\n"]},"failureThreshold":3,"periodSeconds":10,"successThreshold":1,"timeoutSeconds":5}
+---- Pod üzerinde (describe) ----
+[wall-web]
+    Restart Count:  0
+    Liveness:   http-get http://:http/health delay=0s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ delay=0s timeout=5s period=5s #success=1 #failure=2
+    Startup:    http-get http://:http/health delay=0s timeout=2s period=5s #success=1 #failure=40
+    Restart Count:  0
+    Liveness:   http-get http://:http/health delay=0s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/ delay=0s timeout=5s period=5s #success=1 #failure=2
+    Startup:    http-get http://:http/health delay=0s timeout=2s period=5s #success=1 #failure=40
+[wall-db]
+    Restart Count:  0
+    Liveness:   exec [pg_isready -h 127.0.0.1 -p 5432] delay=0s timeout=5s period=20s #success=1 #failure=3
+    Readiness:  exec [sh -c psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -tAc 'SELECT 1' | grep -q 1
+    Startup:  exec [pg_isready -h 127.0.0.1 -p 5432] delay=0s timeout=3s period=5s #success=1 #failure=30

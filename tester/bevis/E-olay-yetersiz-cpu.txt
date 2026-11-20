@@ -1,0 +1,24 @@
+== 2026-11-20T15:12:11+01:00 ==
+NAME                        READY   STATUS             RESTARTS      AGE   IP             NODE                                       NOMINATED NODE   READINESS GATES
+wall-db-59f78b7f99-sw4wc    0/1     Pending            0             12m   <none>         <none>                                     <none>           <none>
+wall-testclient             1/1     Running            0             17m   10.128.1.205   ip-10-0-7-0.eu-north-1.compute.internal    <none>           <none>
+wall-web-5ffd489dd9-hkxlf   1/1     Running            0             17m   10.128.1.207   ip-10-0-7-0.eu-north-1.compute.internal    <none>           <none>
+wall-web-5ffd489dd9-kp7xl   1/1     Running            0             23h   10.129.1.251   ip-10-0-8-52.eu-north-1.compute.internal   <none>           <none>
+wall-web-66f7488444-r7t6j   0/1     CrashLoopBackOff   6 (45s ago)   12m   10.128.1.208   ip-10-0-7-0.eu-north-1.compute.internal    <none>           <none>
+---- describe DB Pod (Pending) ----
+Conditions:
+  Type           Status
+  PodScheduled   False 
+Volumes:
+Events:
+  Type     Reason            Age                  From               Message
+  ----     ------            ----                 ----               -------
+  Warning  FailedScheduling  12m                  default-scheduler  0/3 nodes are available: 3 Insufficient cpu. no new claims to deallocate, preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.
+  Warning  FailedScheduling  4m46s (x2 over 10m)  default-scheduler  0/3 nodes are available: 3 Insufficient cpu. no new claims to deallocate, preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.
+---- quota ----
+limits.cpu                             2050m   4
+limits.memory                          1312Mi  8Gi
+pods                                   5       20
+requests.cpu                           510m    2
+requests.memory                        656Mi   4Gi
+requests.storage                       1Gi     10Gi

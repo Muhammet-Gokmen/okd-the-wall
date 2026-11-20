@@ -27,6 +27,7 @@ spec:
           image: quay.io/kurs/postgresql:2026-10-29
           ports:
             - containerPort: 5432
+
           env:
             - name: POSTGRES_DB
               value: walldb
@@ -40,9 +41,32 @@ spec:
                 secretKeyRef:
                   name: wall-db-credentials
                   key: password
+          startupProbe:
+            exec:
+              command: ["pg_isready", "-h", "127.0.0.1", "-p", "5432"]
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 30
+          readinessProbe:
+            exec:
+              command:
+                - sh
+                - -c
+                - |
+                  psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -tAc 'SELECT 1' | grep -q 1
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            exec:
+              command: ["pg_isready", "-h", "127.0.0.1", "-p", "5432"]
+
+            periodSeconds: 20
+            timeoutSeconds: 5
+            failureThreshold: 3
           resources:
             requests:
-              cpu: 200m
+              cpu: 100m
               memory: 256Mi
             limits:
               cpu: 500m
