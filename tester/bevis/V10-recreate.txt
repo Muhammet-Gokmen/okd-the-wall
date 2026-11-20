@@ -1,0 +1,74 @@
+== 2026-11-20T17:38:02+01:00 1. BEFORE ==
+PVC UID: 21f1143b-147f-48fb-add3-da15bec06523
+14 rows, max id 14
+14 G2-test-173406
+13 G1-test-172753
+12 F-test-171903
+== 2026-11-20T17:38:03+01:00 2. Stop writes, shut the DB down in a controlled way ==
+route.route.openshift.io "wall-web" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+horizontalpodautoscaler.autoscaling "wall-web" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+deployment.apps/wall-web scaled
+pod/wall-web-54b47c99c8-hnx99 condition met
+pod/wall-web-54b47c99c8-t2fpx condition met
+deployment.apps/wall-db scaled
+pod/wall-db-775f8b4fc6-8cwnb condition met
+== 3. Objects deleted ==
+deployment.apps/wall-db
+deployment.apps/wall-web
+service/wall-db
+service/wall-web
+deployment.apps "wall-web" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+deployment.apps "wall-db" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+service "wall-web" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+service "wall-db" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+-- remaining and reused (pvc, secret, configmap, networkpolicy):
+persistentvolumeclaim/wall-db-data
+secret/wall-db-credentials
+configmap/wall-config
+configmap/wall-loadgen
+networkpolicy.networking.k8s.io/wall-db-allow-web
+== 2026-11-20T17:38:07+01:00 4. Recreate from Git ==
+configmap/wall-config unchanged
+persistentvolumeclaim/wall-db-data unchanged
+deployment.apps/wall-db created
+service/wall-db created
+deployment.apps/wall-web created
+service/wall-web created
+route.route.openshift.io/wall-web created
+networkpolicy.networking.k8s.io/wall-db-allow-web unchanged
+horizontalpodautoscaler.autoscaling/wall-web created
+Waiting for deployment "wall-db" rollout to finish: 0 of 1 updated replicas are available...
+deployment "wall-db" successfully rolled out
+Waiting for deployment "wall-web" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "wall-web" rollout to finish: 1 of 2 updated replicas are available...
+deployment "wall-web" successfully rolled out
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/wall-db    1/1     1            1           31s
+deployment.apps/wall-web   2/2     2            2           31s
+
+NAME               TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/wall-db    ClusterIP   172.30.18.201    <none>        5432/TCP   31s
+service/wall-web   ClusterIP   172.30.106.151   <none>        80/TCP     31s
+
+NAME                                HOST/PORT                                                              PATH   SERVICES   PORT   TERMINATION     WILDCARD
+route.route.openshift.io/wall-web   wall-web-student-muhammet-gokmen-lerniastudent-se.apps.okd.cloud2.se          wall-web   http   edge/Redirect   None
+
+NAME                                           REFERENCE             TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/wall-web   Deployment/wall-web   cpu: <unknown>/50%   2         3         2          30s
+
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/wall-db-data   Bound    pvc-21f1143b-147f-48fb-add3-da15bec06523   1Gi        RWO            gp3-csi        <unset>                 27h
+
+NAME                                                POD-SELECTOR                     AGE
+networkpolicy.networking.k8s.io/wall-db-allow-web   app.kubernetes.io/name=wall-db   26h
+== 2026-11-20T17:38:39+01:00 5. Verify ==
+PVC UID: 21f1143b-147f-48fb-add3-da15bec06523
+14 rows, max id 14
+14 G2-test-173406
+13 G1-test-172753
+12 F-test-171903
+route: HTTP 200
+H-test-173840
+15 rows, max id 15
+THE WALL_ v2
+Messages: 15
