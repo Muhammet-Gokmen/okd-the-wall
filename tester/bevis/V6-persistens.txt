@@ -1,11 +1,11 @@
-== 2026-11-19T15:23:46+01:00 1. Write 3 unique messages ==
-V6-152346-1
-V6-152346-2
-V6-152346-3
+== 2026-11-20T14:54:15+01:00 1. Write 3 unique messages ==
+V6-145415-1
+V6-145415-2
+V6-145415-3
 == 2. SQL: messages stored in table messages ==
  total 
 -------
-     8
+    11
 (1 row)
 
  id |   author   |   message   
@@ -13,20 +13,23 @@ V6-152346-3
   6 | Testperson | V6-152346-1
   7 | Testperson | V6-152346-2
   8 | Testperson | V6-152346-3
-(3 rows)
+  9 | Testperson | V6-145415-1
+ 10 | Testperson | V6-145415-2
+ 11 | Testperson | V6-145415-3
+(6 rows)
 
 == 3. UIDs BEFORE deleting the DB Pod ==
-DB Pod:  wall-db-77fd79c474-7rthv  UID=e02315fc-90ab-4e78-89dc-9b87904db3e2
+DB Pod:  wall-db-77fd79c474-4vcld  UID=45de4d05-e63b-4f12-a1aa-d86e2b3b09e1
 PVC:     wall-db-data  UID=21f1143b-147f-48fb-add3-da15bec06523
-== 2026-11-19T15:23:48+01:00 4. Delete ONLY the DB Pod ==
-pod "wall-db-77fd79c474-7rthv" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+== 2026-11-20T14:54:17+01:00 4. Delete ONLY the DB Pod ==
+pod "wall-db-77fd79c474-4vcld" deleted from student-muhammet-gokmen-lerniastudent-se namespace
 deployment.apps/wall-db condition met
 == 5. UIDs AFTER ==
-DB Pod:  wall-db-77fd79c474-4vcld  UID=45de4d05-e63b-4f12-a1aa-d86e2b3b09e1
+DB Pod:  wall-db-77fd79c474-rrcr6  UID=ca23bb15-eb24-450c-a28f-d8834290c612
 PVC:     wall-db-data  UID=21f1143b-147f-48fb-add3-da15bec06523
  total 
 -------
-     8
+    11
 (1 row)
 
  id |   author   |   message   
@@ -34,18 +37,21 @@ PVC:     wall-db-data  UID=21f1143b-147f-48fb-add3-da15bec06523
   6 | Testperson | V6-152346-1
   7 | Testperson | V6-152346-2
   8 | Testperson | V6-152346-3
-(3 rows)
+  9 | Testperson | V6-145415-1
+ 10 | Testperson | V6-145415-2
+ 11 | Testperson | V6-145415-3
+(6 rows)
 
 == 6. Delete one web Pod; the new Pod must read the same data ==
-pod "wall-web-5ffd489dd9-fbbpl" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+pod "wall-web-5ffd489dd9-cwg85" deleted from student-muhammet-gokmen-lerniastudent-se namespace
 deployment.apps/wall-web condition met
 == 7. Every web Pod shows the same data ==
--- wall-web-5ffd489dd9-cwg85 (10.128.1.197)
-Pod: <span class="pod">wall-web-5ffd489dd9-cwg85
-Messages: 8
+-- wall-web-5ffd489dd9-hkxlf (10.128.1.207)
+Pod: <span class="pod">wall-web-5ffd489dd9-hkxlf
+Messages: 11
 -- wall-web-5ffd489dd9-kp7xl (10.129.1.251)
 Pod: <span class="pod">wall-web-5ffd489dd9-kp7xl
-Messages: 8
-V6-152346-1
-V6-152346-2
-V6-152346-3
+Messages: 11
+V6-145415-1
+V6-145415-2
+V6-145415-3
