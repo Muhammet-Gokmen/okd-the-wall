@@ -1,0 +1,8 @@
+== 2026-11-24T11:24:27+01:00 TLS verification of the Route ==
+subject=CN = api.okd.cloud2.se
+issuer=C = US, O = Let's Encrypt, CN = YE2
+notBefore=Oct  7 12:42:27 2026 GMT
+notAfter=Jan  5 12:42:26 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.apps.okd.cloud2.se, DNS:api.okd.cloud2.se
+verify=0 http=200
