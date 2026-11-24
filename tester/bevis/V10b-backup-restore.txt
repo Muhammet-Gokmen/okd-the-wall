@@ -1,0 +1,54 @@
+== 2026-11-24T10:53:07+01:00 1. Backup (pg_dump, plain SQL) ==
+PVC UID: 21f1143b-147f-48fb-add3-da15bec06523
+15
+-rw------- 1 benubuntu benubuntu 3027 Nov 24 10:53 /home/benubuntu/okd-arsiv/backup/wall-20261124-105307.sql
+-- verify the backup before touching anything:
+rows in dump: 15
+backup OK: /home/benubuntu/okd-arsiv/backup/wall-20261124-105307.sql
+== 2026-11-24T10:53:09+01:00 2. Delete DB + PVC (data volume lost) ==
+horizontalpodautoscaler.autoscaling "wall-web" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+deployment.apps/wall-web scaled
+pod/wall-web-ff446674d-blz7m condition met
+pod/wall-web-ff446674d-fgnt2 condition met
+deployment.apps "wall-db" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+persistentvolumeclaim "wall-db-data" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+No resources found in student-muhammet-gokmen-lerniastudent-se namespace.
+== 2026-11-24T10:53:13+01:00 3. Fresh start from Git: new EMPTY PVC ==
+configmap/wall-config unchanged
+persistentvolumeclaim/wall-db-data created
+deployment.apps/wall-db created
+service/wall-db unchanged
+deployment.apps/wall-web configured
+service/wall-web unchanged
+route.route.openshift.io/wall-web unchanged
+networkpolicy.networking.k8s.io/wall-db-allow-web unchanged
+horizontalpodautoscaler.autoscaling/wall-web created
+Waiting for deployment "wall-db" rollout to finish: 0 of 1 updated replicas are available...
+deployment "wall-db" successfully rolled out
+Waiting for deployment "wall-web" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "wall-web" rollout to finish: 1 of 2 updated replicas are available...
+deployment "wall-web" successfully rolled out
+NEW PVC UID: c240ac1c-24f1-4f03-b18d-f656c8b216f6
+route: HTTP 200
+THE WALL_ v2
+Messages: 0
+public|messages|table|wallapp
+0
+== 2026-11-24T10:53:35+01:00 4. Restore from the backup ==
+ set_config 
+------------
+ 
+(1 row)
+
+ setval 
+--------
+     15
+(1 row)
+
+15 rows, max id 15
+15 H-test-173840
+14 G2-test-173406
+13 G1-test-172753
+Messages: 15
+R-test-105336
+16 rows (after a new write)
