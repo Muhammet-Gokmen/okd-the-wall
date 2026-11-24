@@ -1,0 +1,39 @@
+== 2026-11-24T11:29:47+01:00 Clean-up and final state ==
+-- remove test objects (ignore 'not found'):
+pod "wall-testclient" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+configmap "wall-loadgen" deleted from student-muhammet-gokmen-lerniastudent-se namespace
+-- no intentional faults left:
+DB_NAME in wall-config: walldb
+wall-db selector: {"app.kubernetes.io/name":"wall-db"}
+endpoints wall-db: Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+10.131.0.155
+-- live state equals Git (exit code 0 = no difference):
+oc diff exit code: 0
+-- objects in the project:
+deployment.apps/wall-db
+deployment.apps/wall-web
+pod/wall-db-775f8b4fc6-zgq6d
+pod/wall-web-ff446674d-8tljd
+pod/wall-web-ff446674d-qb4dz
+service/wall-db
+service/wall-web
+route.route.openshift.io/wall-web
+persistentvolumeclaim/wall-db-data
+horizontalpodautoscaler.autoscaling/wall-web
+networkpolicy.networking.k8s.io/wall-db-allow-web
+configmap/kube-root-ca.crt
+configmap/my-config
+configmap/openshift-service-ca.crt
+configmap/wall-config
+secret/builder-dockercfg-gnplp
+secret/default-dockercfg-w6rfq
+secret/deployer-dockercfg-hc695
+secret/wall-db-credentials
+NAME                       READY   STATUS    RESTARTS   AGE
+wall-db-775f8b4fc6-zgq6d   1/1     Running   0          36m
+wall-web-ff446674d-8tljd   1/1     Running   0          36m
+wall-web-ff446674d-qb4dz   1/1     Running   0          36m
+-- route:
+https://wall-web-student-muhammet-gokmen-lerniastudent-se.apps.okd.cloud2.se/ -> HTTP 200
+{"pod":"wall-web-ff446674d-qb4dz","status":"ok"}
+
