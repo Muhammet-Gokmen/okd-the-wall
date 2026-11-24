@@ -137,3 +137,8 @@ moved, a digest cannot). The running image ID can be read with
   preserved volume, fresh start): `drift/runbook.md`.
 * Two required incidents and one unplanned event: `drift/incidentlogg.md`.
 * Report: `rapport/projektrapport.pdf`.
+
+## Note on the volume
+
+The data volume was deliberately deleted and recreated in test V10b (backup and restore on a new empty volume).
+The current PVC UID is `c240ac1c-24f1-4f03-b18d-f656c8b216f6`; the UID `21f1143b-…` in tests V4 and V6 belongs to the earlier volume.
